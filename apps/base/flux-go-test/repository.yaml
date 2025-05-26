@@ -1,9 +1,16 @@
-apiVersion: source.toolkit.fluxcd.io/v1beta2
-kind: OCIRepository
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
 metadata:
   name: flux-go-test
+  namespace: flux-go-test
 spec:
-  interval: 5m0s
-  url: oci://ghcr.io/jmpargana/charts/flux-go-test
+  interval: 1m
+  url: https://github.com/jmpargana/flux-go-test
+  chart: charts
   ref:
-    semver: ">=0.0.1"
+    branch: main
+  ignore: |
+    # exclude all
+    /*
+    # include charts directory
+    !/charts/    
