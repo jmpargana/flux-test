@@ -7,7 +7,7 @@ spec:
   interval: 1m
   url: https://github.com/jmpargana/flux-go-test
   ref:
-    branch: master
+    branch: main
   ignore: |
     # exclude all
     /*
