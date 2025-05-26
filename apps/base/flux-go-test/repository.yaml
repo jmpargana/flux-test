@@ -6,4 +6,4 @@ spec:
   interval: 5m0s
   url: oci://ghcr.io/jmpargana/charts/flux-go-test
   ref:
-    semver: "^0.0.1"
+    semver: ">=0.0.1"
