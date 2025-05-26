@@ -9,7 +9,7 @@ spec:
     spec:
       chart: flux-go-test
       sourceRef:
-        kind: GitRepository
+        kind: HelmRepository
         name: flux-go-test
   interval: 50m
   install:
