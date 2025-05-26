@@ -1,8 +1,8 @@
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: HelmRepository
 metadata:
-  name: podinfo
-  namespace: default
+  name: flux-go-test
+  namespace: flux-go-test
 spec:
   interval: 1m
   url: https://jmpargana.github.io/flux-go-test
