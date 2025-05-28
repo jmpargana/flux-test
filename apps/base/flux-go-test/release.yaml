@@ -17,7 +17,7 @@ spec:
       retries: 3
   values:
     nodeSelector:
-      kubernetes.io/arch: amd64
+      kubernetes.io/arch: arm64
     image:
       pullPolicy: Always
     env:
