@@ -4,5 +4,5 @@ resources:
   - cert-manager.yaml
   - nginx-ingress.yaml
   - opentelemetry-collector.yaml
-  - opentelemetry-operator.yaml
+  # - opentelemetry-operator.yaml
   - grafana.yaml
