@@ -18,8 +18,8 @@ spec:
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: opentelemetry
-  namespace: opentelemetry
+  name: opentelemetry-operator
+  namespace: otel
 spec:
   interval: 30m
   chart:
@@ -28,6 +28,6 @@ spec:
       version: "*"
       sourceRef:
         kind: HelmRepository
-        name: opentelemetry
-        namespace: opentelemetry
+        name: otel
+        namespace: otel
       interval: 12h

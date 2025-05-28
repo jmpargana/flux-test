@@ -5,3 +5,4 @@ resources:
   - ingress-nginx.yaml
   - opentelemetry-collector.yaml
   - opentelemetry-operator.yaml
+  - grafana.yaml
