@@ -8,7 +8,7 @@ spec:
   sourceRef:
     kind: GitRepository
     name: infrastructure
-  path: ./infrastruture
+  path: ./infrastructure
   prune: true
   wait: true
   timeout: 5m0s
