@@ -16,3 +16,9 @@ spec:
   values:
     loki:
       auth_enabled: false
+
+      storage:
+        type: filesystem
+
+      commonConfig:
+        path_prefix: /var/loki
