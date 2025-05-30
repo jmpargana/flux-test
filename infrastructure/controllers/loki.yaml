@@ -12,4 +12,7 @@ spec:
         kind: HelmRepository
         name: grafana
         namespace: grafana
-      interval: 12h
+      interval: 12h  
+  values:
+    loki:
+      auth_enabled: false

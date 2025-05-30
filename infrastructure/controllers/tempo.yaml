@@ -13,3 +13,7 @@ spec:
         name: grafana
         namespace: grafana
       interval: 12h
+  values:
+    tempo:
+      metricsGenerator:
+        enabled: true
