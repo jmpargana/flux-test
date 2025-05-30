@@ -45,9 +45,6 @@ spec:
       exporters:
         loki:
           endpoint: http://loki.grafana.svc.cluster.local/loki/api/v1/push
-          labels:
-            service: ${service.name}
-            severity: ${severity}
         otlp/tempo:
           endpoint: tempo.grafana.svc.cluster.local:4317
           tls:
