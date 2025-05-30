@@ -6,3 +6,6 @@ resources:
   - opentelemetry-collector.yaml
   # - opentelemetry-operator.yaml
   - grafana.yaml
+  - mimir.yaml
+  - tempo.yaml
+  - loki.yaml
