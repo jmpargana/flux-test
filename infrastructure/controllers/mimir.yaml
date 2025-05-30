@@ -7,7 +7,7 @@ spec:
   interval: 30m
   chart:
     spec:
-      chart: mimir
+      chart: mimir-distributed
       sourceRef:
         kind: HelmRepository
         name: grafana
