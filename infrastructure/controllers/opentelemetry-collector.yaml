@@ -31,3 +31,7 @@ spec:
         name: otel
         namespace: otel
       interval: 12h
+  values:
+    image:
+      repository: otel/opentelemetry-collector-k8s
+    mode: deployment
