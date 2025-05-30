@@ -5,5 +5,4 @@ metadata:
   namespace: flux-go-test
 spec:
   interval: 1m
-  version: '0.*.*'
   url: https://jmpargana.github.io/flux-go-test
