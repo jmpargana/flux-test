@@ -2,7 +2,7 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
   - cert-manager.yaml
-  - nginx-ingress.yaml
+  # - nginx-ingress.yaml
   - opentelemetry-collector.yaml
   # - opentelemetry-operator.yaml
   - grafana.yaml
