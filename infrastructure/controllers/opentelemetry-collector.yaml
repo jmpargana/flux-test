@@ -35,3 +35,51 @@ spec:
     image:
       repository: otel/opentelemetry-collector-k8s
     mode: deployment
+    config:
+      receivers:
+        otlp:
+          protocols:
+            grpc:
+            http:
+
+      exporters:
+        loki:
+          endpoint: http://loki.grafana.svc.cluster.local/loki/api/v1/push
+          labels:
+            service: ${service.name}
+            severity: ${severity}
+        otlp/tempo:
+          endpoint: tempo.grafana.svc.cluster.local:4317
+          tls:
+            insecure: true
+        prometheusremotewrite:
+          endpoint: http://mimir.grafana.svc.cluster.local/api/v1/push
+          tls:
+            insecure: true
+
+      # processors:
+      #   batch: {}
+      #   memory_limiter:
+      #     check_interval: 1s
+      #     limit_mib: 400
+      #     spike_limit_mib: 100
+      #   resource:
+      #     attributes:
+      #       - action: insert
+      #         key: service.name
+      #         value: my-k8s-service
+
+      service:
+        pipelines:
+          logs:
+            receivers: [otlp]
+            # processors: [memory_limiter, batch, resource]
+            exporters: [loki]
+          traces:
+            receivers: [otlp]
+            # processors: [memory_limiter, batch, resource]
+            exporters: [otlp/tempo]
+          metrics:
+            receivers: [otlp]
+            # processors: [memory_limiter, batch, resource]
+            exporters: [prometheusremotewrite]
