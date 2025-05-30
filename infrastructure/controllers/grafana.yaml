@@ -31,3 +31,17 @@ spec:
         name: grafana
         namespace: grafana
       interval: 12h
+  values:
+    datasources:
+      datasources.yaml:
+        apiVersion: 1
+        datasources:
+          - name: Mimir
+            type: mimir
+            url: http://mimir.grafana.svc.cluster.local
+          - name: Loki
+            type: loki
+            url: http://loki.grafana.svc.cluster.local
+          - name: Tempo
+            type: tempo
+            url: http://tempo.grafana.svc.cluster.local
