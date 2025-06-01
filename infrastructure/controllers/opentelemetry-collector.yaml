@@ -33,7 +33,7 @@ spec:
       interval: 12h
   values:
     image:
-      repository: grafana/otel-collector
+      repository: otel/opentelemetry-collector-k8s
     mode: deployment
     config:
       receivers:
