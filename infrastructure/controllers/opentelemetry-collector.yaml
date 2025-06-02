@@ -36,12 +36,6 @@ spec:
       repository: otel/opentelemetry-collector-contrib
     mode: deployment
     config:
-      receivers:
-        otlp:
-          protocols:
-            grpc:
-            http:
-
       exporters:
         loki:
           endpoint: http://loki-gateway.grafana.svc.cluster.local/loki/api/v1/push
