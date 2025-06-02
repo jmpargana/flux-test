@@ -38,13 +38,13 @@ spec:
     config:
       exporters:
         loki:
-          endpoint: http://loki-gateway.grafana.svc.cluster.local/loki/api/v1/push
+          endpoint: http://loki.grafana.svc.cluster.local:3100/loki/api/v1/push
         otlp/tempo:
-          endpoint: tempo.grafana.svc.cluster.local:4317
+          endpoint: http://tempo.grafana.svc.cluster.local:4317
           tls:
             insecure: true
         prometheusremotewrite:
-          endpoint: http://prometheus.grafana.svc.cluster.local/api/v1/push
+          endpoint: http://prometheus.grafana.svc.cluster.local:9090/api/v1/push
 
       processors:
         batch: {}
