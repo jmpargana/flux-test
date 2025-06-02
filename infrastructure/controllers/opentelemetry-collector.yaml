@@ -33,7 +33,7 @@ spec:
       interval: 12h
   values:
     image:
-      repository: otel/opentelemetry-collector-k8s
+      repository: otel/opentelemetry-collector-contrib
     mode: deployment
     config:
       receivers:
@@ -43,8 +43,8 @@ spec:
             http:
 
       exporters:
-        # loki:
-        #   endpoint: http://loki-gateway.grafana.svc.cluster.local/loki/api/v1/push
+        loki:
+          endpoint: http://loki-gateway.grafana.svc.cluster.local/loki/api/v1/push
         otlp/tempo:
           endpoint: tempo.grafana.svc.cluster.local:4317
           tls:
