@@ -14,6 +14,10 @@ spec:
         namespace: grafana
       interval: 12h  
   values:
+    resultsCache:
+      # enabled: false
+      persistence:
+        enabled: false
     loki:
       commonConfig:
         replication_factor: 1

@@ -36,9 +36,9 @@ spec:
       datasources.yaml:
         apiVersion: 1
         datasources:
-          - name: Mimir
-            type: mimir
-            url: http://mimir.grafana.svc.cluster.local
+          - name: Prometheus
+            type: prometheus
+            url: http://prometheus.grafana.svc.cluster.local
           - name: Loki
             type: loki
             url: http://loki.grafana.svc.cluster.local
