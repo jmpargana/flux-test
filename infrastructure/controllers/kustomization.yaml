@@ -4,8 +4,7 @@ resources:
   - cert-manager.yaml
   - nginx-ingress.yaml
   - opentelemetry-collector.yaml
-  # - opentelemetry-operator.yaml
   - grafana.yaml
-  - mimir.yaml
+  - prometheus.yaml
   - tempo.yaml
   - loki.yaml
