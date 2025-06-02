@@ -15,7 +15,7 @@ spec:
       interval: 12h  
   values:
     resultsCache:
-      # enabled: false
+      enabled: false
       persistence:
         enabled: false
     loki:
