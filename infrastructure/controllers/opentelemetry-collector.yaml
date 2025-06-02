@@ -50,9 +50,7 @@ spec:
           tls:
             insecure: true
         prometheusremotewrite:
-          endpoint: http://mimir.grafana.svc.cluster.local/api/v1/push
-          tls:
-            insecure: true
+          endpoint: http://prometheus.grafana.svc.cluster.local/api/v1/push
 
       processors:
         batch: {}
