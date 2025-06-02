@@ -57,10 +57,10 @@ spec:
 
       service:
         pipelines:
-          # logs:
-          #   receivers: [otlp]
-          #   processors: [batch]
-          #   exporters: [loki]
+          logs:
+            receivers: [otlp]
+            processors: [batch]
+            exporters: [loki]
           traces:
             receivers: [otlp]
             processors: [batch]
