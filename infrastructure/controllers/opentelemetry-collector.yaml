@@ -43,8 +43,8 @@ spec:
             http:
 
       exporters:
-        loki:
-          endpoint: http://loki-gateway.grafana.svc.cluster.local/loki/api/v1/push
+        # loki:
+        #   endpoint: http://loki-gateway.grafana.svc.cluster.local/loki/api/v1/push
         otlp/tempo:
           endpoint: tempo.grafana.svc.cluster.local:4317
           tls:
@@ -54,29 +54,20 @@ spec:
           tls:
             insecure: true
 
-      # processors:
-      #   batch: {}
-      #   memory_limiter:
-      #     check_interval: 1s
-      #     limit_mib: 400
-      #     spike_limit_mib: 100
-      #   resource:
-      #     attributes:
-      #       - action: insert
-      #         key: service.name
-      #         value: my-k8s-service
+      processors:
+        batch: {}
 
       service:
         pipelines:
-          logs:
-            receivers: [otlp]
-            # processors: [memory_limiter, batch, resource]
-            exporters: [loki]
+          # logs:
+          #   receivers: [otlp]
+          #   processors: [batch]
+          #   exporters: [loki]
           traces:
             receivers: [otlp]
-            # processors: [memory_limiter, batch, resource]
+            processors: [batch]
             exporters: [otlp/tempo]
           metrics:
             receivers: [otlp]
-            # processors: [memory_limiter, batch, resource]
+            processors: [batch]
             exporters: [prometheusremotewrite]
