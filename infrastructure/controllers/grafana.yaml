@@ -38,10 +38,13 @@ spec:
         datasources:
           - name: Prometheus
             type: prometheus
-            url: http://prometheus.grafana.svc.cluster.local
+            access: proxy
+            url: http://prometheus-server.grafana.svc.cluster.local
           - name: Loki
             type: loki
-            url: http://loki.grafana.svc.cluster.local
+            access: proxy
+            url: http://loki.grafana.svc.cluster.local:3100
           - name: Tempo
             type: tempo
-            url: http://tempo.grafana.svc.cluster.local
+            access: proxy
+            url: http://tempo.grafana.svc.cluster.local:3100
