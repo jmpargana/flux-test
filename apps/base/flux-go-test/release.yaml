@@ -23,3 +23,11 @@ spec:
     env:
       - name: OTEL_EXPORTER_OTLP_ENDPOINT
         value: "http://opentelemetry-collector.otel.svc.cluster.local:4318"
+    livenessProbe:
+      httpGet:
+        path: /healthz
+        port: http
+    readinessProbe:
+      httpGet:
+        path: /readyz
+        port: http
